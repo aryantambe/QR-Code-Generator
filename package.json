@@ -1,0 +1,16 @@
+{
+  "name": "2.4-qr-code-project",
+  "version": "1.0.0",
+  "description": "This a qr code image generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aryan Tambe",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "inquirer": "^12.3.3",
+    "qr-image": "^3.2.0"
+  }
+}
