@@ -1,0 +1,38 @@
+name: QR Code Generator CI
+
+on:
+  push:
+    branches:
+      - main  # Triggers when changes are pushed to the main branch
+  pull_request:
+    branches:
+      - main  # Triggers on pull requests targeting the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # This specifies the OS to run the actions on, you can use macOS or Windows as well
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Check out the code from the repository
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Set the Node.js version you want to use, e.g., '16' or '14'
+
+    - name: Install dependencies
+      run: |
+        npm install  # Install dependencies defined in package.json
+
+    - name: Run QR Code script
+      run: |
+        node your-script-file.js  # Replace with the name of your script file (e.g., qr-generator.js)
+
+    - name: Commit and push changes (if needed)
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Automated QR Code and URL file generation" || echo "No changes to commit"
+        git push
