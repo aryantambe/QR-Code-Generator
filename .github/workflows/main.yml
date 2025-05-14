@@ -27,7 +27,7 @@ jobs:
 
     - name: Run QR Code script
       run: |
-        node your-script-file.js  # Replace with the name of your script file (e.g., qr-generator.js)
+        node index.js  # Replace with the name of your script file (e.g., qr-generator.js)
 
     - name: Commit and push changes (if needed)
       run: |
