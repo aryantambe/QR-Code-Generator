@@ -29,10 +29,4 @@ jobs:
       run: |
         node index.js  # Replace with the name of your script file (e.g., qr-generator.js)
 
-    - name: Commit and push changes (if needed)
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Automated QR Code and URL file generation" || echo "No changes to commit"
-        git push
+    
